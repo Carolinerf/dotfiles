@@ -1,0 +1,167 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Maple Mono NF CN, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.formatOnSave": true,
+  "editor.lineHeight": 1.2,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.autohide": true,
+  "editor.rulers": [80],
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#92b3a5"
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "zenMode.hideLineNumbers": false,
+
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#de1c31",
+  "vim.highlightedyank.textColor": "white",
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.leader": "<space>",
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-p>": false,
+    "<C-f>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["leader", "k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.mark.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.mark.prev"]
+    },
+    {
+      "before": ["leader", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<C-Up>"],
+      "after": ["<C-w>", "+"]
+    },
+    {
+      "before": ["<C-Down>"],
+      "after": ["<C-w>", "-"]
+    },
+    {
+      "before": ["<C-Left>"],
+      "after": ["<C-w>", ">"]
+    },
+    {
+      "before": ["<C-Right>"],
+      "after": ["<C-w>", "<"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["s", "h"],
+      "commands": [":split"]
+    },
+    {
+      "before": ["s", "v"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "<C-h>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "<C-j>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "<C-k>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "<C-l>"]
+    },
+    {
+      "before": ["S"],
+      "commands": [":w"]
+    },
+    {
+      "before": ["Q"],
+      "commands": [":wq"]
+    },
+    {
+      "before": ["<Tab>"],
+      "commands": [":tabnext"]
+    },
+    {
+      "before": ["<S-Tab>"],
+      "commands": [":tabprev"]
+    }
+  ]
+}
