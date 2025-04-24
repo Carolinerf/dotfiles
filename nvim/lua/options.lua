@@ -4,6 +4,9 @@ local o = vim.o
 local opt = vim.opt
 local g = vim.g
 
+-- Windows Shell
+o.shell = "nu"
+
 -- Indenting
 o.shiftwidth = 4
 o.tabstop = 4
