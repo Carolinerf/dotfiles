@@ -4,16 +4,33 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local opts = { noremap = true, silent = true }
 
 -- better up/down
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+map(
+    { "n", "x" },
+    "j",
+    "v:count == 0 ? 'gj' : 'j'",
+    { desc = "Down", expr = true, silent = true }
+)
+map(
+    { "n", "x" },
+    "<Down>",
+    "v:count == 0 ? 'gj' : 'j'",
+    { desc = "Down", expr = true, silent = true }
+)
+map(
+    { "n", "x" },
+    "k",
+    "v:count == 0 ? 'gk' : 'k'",
+    { desc = "Up", expr = true, silent = true }
+)
+map(
+    { "n", "x" },
+    "<Up>",
+    "v:count == 0 ? 'gk' : 'k'",
+    { desc = "Up", expr = true, silent = true }
+)
 
 -- increase/decrease number
 map("n", "+", "<C-a>", opts)

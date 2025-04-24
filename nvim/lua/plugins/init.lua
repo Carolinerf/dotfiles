@@ -59,4 +59,34 @@ return {
             require("configs.mason-conform")
         end,
     },
+
+    {
+        "mfussenegger/nvim-dap",
+        config = function()
+            require("configs.dap")
+        end,
+    },
+
+    {
+        "nvim-neotest/nvim-nio",
+    },
+
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
+        config = function()
+            require("configs.dap-ui")
+        end,
+    },
+
+    {
+        "rust-lang/rust.vim",
+        ft = "rust",
+        init = function()
+            vim.g.rustfmt_autosave = 1
+        end,
+    },
 }
