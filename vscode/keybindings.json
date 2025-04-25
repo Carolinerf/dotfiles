@@ -2,13 +2,13 @@
 [
   // 不断扩大选中
   {
-    "key": "ctrl+=",
+    "key": "alt+=",
     "command": "expand_region",
     "when": "editorTextFocus"
   },
   // 不断缩小选中
   {
-    "key": "ctrl+-",
+    "key": "alt+-",
     "command": "undo_expand_region",
     "when": "editorTextFocus && editorHasSelection"
   },

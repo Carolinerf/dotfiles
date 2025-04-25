@@ -1,26 +1,105 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Maple Mono NF CN, Consolas, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 18,
-  "editor.formatOnSave": true,
-  "editor.lineHeight": 1.2,
-  "editor.lineNumbers": "relative",
-  "editor.linkedEditing": true,
-  "editor.minimap.autohide": true,
-  "editor.rulers": [80],
-  "editor.stickyScroll.enabled": true,
-  "editor.suggest.insertMode": "replace",
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80,
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#92b3a5"
-  },
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.startupEditor": "none",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "zenMode.hideLineNumbers": false,
+  // ===
+  // === Latex 配置
+  // ===
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.showContextMenu": true,
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.message.error.show": false,
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "XeLaTeX",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "PDFLaTeX",
+      "tools": ["pdflatex"]
+    },
+    {
+      "name": "BibTeX",
+      "tools": ["bibtex"]
+    },
+    {
+      "name": "LaTeXmk",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "xelatex -> bibtex -> xelatex*2",
+      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex*2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    }
+  ],
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk"
+  ],
+  "latex-workshop.latex.autoClean.run": "onFailed",
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
 
+  // ===
+  // === Vim 配置
+  // ===
   "vim.easymotion": true,
   "vim.foldfix": true,
   "vim.highlightedyank.enable": true,
@@ -36,12 +115,12 @@
     "<C-p>": false,
     "<C-f>": false
   },
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
-  ],
+  // "vim.insertModeKeyBindings": [
+  // {
+  //   "before": ["j", "k"],
+  //   "after": ["<Esc>"]
+  // }
+  // ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["J"],
@@ -78,10 +157,6 @@
       "commands": ["editor.action.quickFix"]
     },
     {
-      "before": ["leader", "k"],
-      "commands": ["editor.action.showHover"]
-    },
-    {
       "before": ["<C-Up>"],
       "after": ["<C-w>", "+"]
     },
@@ -99,6 +174,10 @@
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["s"],
+      "after": ["/<++>", "<R>", "k", "n", "c", "e"]
+    },
     {
       "before": [";"],
       "after": [":"]
@@ -163,5 +242,68 @@
       "before": ["<S-Tab>"],
       "commands": [":tabprev"]
     }
-  ]
+  ],
+
+  // ===
+  // === 系统配置
+  // ===
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Maple Mono NF CN, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 24,
+  "editor.formatOnSave": true,
+  "editor.lineHeight": 1.2,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.mouseWheelZoom": true,
+  "editor.minimap.autohide": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80],
+  "editor.stickyScroll.enabled": false,
+  "editor.suggest.insertMode": "replace",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "explorer.compactFolders": false,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#92b3a5"
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "zenMode.hideLineNumbers": false,
+
+  // ===
+  // === Language 配置
+  // ===
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "rust-analyzer.completion.callable.snippets": "none",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.vscode-pylance",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultColorDecorators": "never",
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[dart]": {
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[html]": {
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  }
 }
