@@ -89,4 +89,13 @@ return {
             vim.g.rustfmt_autosave = 1
         end,
     },
+
+    -- Rust
+    {
+        "simrat39/rust-tools.nvim",
+        after = "nvim-lspconfig",
+        config = function()
+            require("configs.rust-tools")
+        end,
+    },
 }
