@@ -26,3 +26,13 @@ opt.incsearch = true
 
 -- set filetype for .CBL COBOL files.
 -- vim.cmd([[ au BufRead,BufNewFile *.CBL set filetype=cobol ]])
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = "YankHighlight",
+            timeout = 200,
+            on_visual = true,
+        })
+    end,
+})

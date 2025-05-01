@@ -11,6 +11,14 @@ M.base46 = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
     },
+
+    hl_add = {
+        YankHighlight = {
+            reverse = true,
+            fg = "NONE",
+            bg = "NONE",
+        },
+    },
 }
 
 return M

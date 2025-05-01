@@ -98,4 +98,23 @@ return {
             require("configs.rust-tools")
         end,
     },
+
+    -- nvim-surround
+    {
+        "kylechui/nvim-surround",
+        version = "^3.0.0",
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({})
+        end,
+    },
+
+    -- treesj
+    {
+        "Wansmer/treesj",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        config = function()
+            require("configs.treesj")
+        end,
+    },
 }

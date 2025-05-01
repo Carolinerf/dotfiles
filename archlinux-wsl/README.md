@@ -54,6 +54,7 @@ passwd <username>
 
 ## Arch Linux 配置
 
+### 换源
 换源，编辑 `/etc/pacman.d/mirrorlist`，在文件的最顶部添加：
 ```
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
@@ -74,9 +75,15 @@ sudo pacman -Syy archlinux-keyring
 糖豆人彩蛋
 编辑 `/etc/pacman.conf` 文件，在 `# Misc options` 下面，删掉 `Color` 前面的注释，添加一行 `ILoveCandy`。
 
+### 安装软件
 安装必要软件包：
 ```sh
-sudo pacman -S base-devel git nvim fish tmux fd tree man eza
+sudo pacman -S base-devel git nvim fish tmux fd tree man eza openssh
+```
+
+安装完 nvim 之后，在安装 luarocks
+```sh 
+sudo pacman -S luarocks
 ```
 
 切换 shell 为 fish
@@ -103,7 +110,7 @@ paru -S resvg
 ```
 然后将官方文档的配置文件复制到 `~/.config/yazi/` 目录下即可。
 
-rust 环境配置
+### rust 环境配置
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
@@ -117,7 +124,7 @@ source "$HOME/.cargo/env"
 rustc --version
 ```
 
-flutter 环境配置
+### flutter 环境配置
 ```sh
 paru -S flutter
 paru -S android-sdk
@@ -138,7 +145,7 @@ flutter doctor --android-licenses
 flutter doctor -v
 ```
 
-go 环境配置
+### go 环境配置
 ```sh
 sudo pacman -S go
 mkdir -p $HOME/go/{bin,src,pkg}
@@ -147,7 +154,7 @@ set -Ux PATH $PATH $GOPATH/bin
 source ~/.config/fish/config.fish
 ```
 
-c++ 环境配置
+### c++ 环境配置
 ```sh
 sudo pacman -S clang
 ```
